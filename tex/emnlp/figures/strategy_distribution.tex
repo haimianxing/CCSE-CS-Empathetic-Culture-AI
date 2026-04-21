@@ -1,0 +1,81 @@
+% ============================================================================
+% Strategy Distribution Radar Chart
+% Shows distribution of 6 strategy categories
+% ============================================================================
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.7\textwidth,
+    height=0.7\textwidth,
+    xtick=\empty,
+    ytick=\empty,
+    axis lines=none,
+]
+
+% Define radar chart parameters
+\def\R{3}
+\def\N{6}
+\def\angleStep{60}
+
+% Draw concentric polygons (grid)
+\foreach \r in {1,2,3} {
+    \draw[gray!30, dashed] (0,0) circle (\r);
+}
+
+% Draw axis lines
+\foreach \i in {1,...,\N} {
+    \draw[gray!30] (0,0) -- (\angleStep*\i:\R);
+}
+
+% Strategy categories (with counts)
+% C1: Active Listening (487)
+% C2: Face-Saving (445)
+% C3: Emotional Soothing (623)
+% C4: Solution Advancement (542)
+% C5: Relationship Repair (389)
+% C6: Cultural Adaptation (398)
+
+% Normalize to max=623 (C3)
+\def\cOne{0.78}  % 487/623
+\def\cTwo{0.71}  % 445/623
+\def\cThree{1.0} % 623/623
+\def\cFour{0.87} % 542/623
+\def\cFive{0.62} % 389/623
+\def\cSix{0.64}  % 398/623
+
+% Draw data polygon
+\draw[fill=blue!20, opacity=0.7] (90:\cThree*\R)
+    -- (150:\cFour*\R)
+    -- (210:\cFive*\R)
+    -- (270:\cSix*\R)
+    -- (330:\cOne*\R)
+    -- (30:\cTwo*\R)
+    -- cycle;
+
+% Draw points
+\foreach \val/\angle in {
+    \cThree/90,
+    \cFour/150,
+    \cFive/210,
+    \cSix/270,
+    \cOne/330,
+    \cTwo/30
+} {
+    \fill[blue] (\angle:\val*\R) circle (2pt);
+}
+
+% Labels
+\node[above] at (90:\R+0.3) {\small C3: 情感舒缓 (623)};
+\node[above left] at (150:\R+0.3) {\small C4: 解决推进 (542)};
+\node[below left] at (210:\R+0.3) {\small C5: 关系修复 (389)};
+\node[below] at (270:\R+0.3) {\small C6: 文化适应 (398)};
+\node[below right] at (330:\R+0.3) {\small C1: 积极倾听 (487)};
+\node[above right] at (30:\R+0.3) {\small C2: 面子维护 (445)};
+
+\end{axis}
+\end{tikzpicture}
+\caption{6类策略使用分布（总计2,884次标注）}
+\label{fig:strategy_distribution}
+\end{figure}
