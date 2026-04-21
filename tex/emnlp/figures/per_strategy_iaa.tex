@@ -1,0 +1,64 @@
+% Per-Strategy Inter-Annotator Agreement Visualization
+% Generated for CCSE-CS paper
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xbar,
+    width=0.9\textwidth,
+    height=8cm,
+    symbolic y coords={
+        C4: Solution Advancement,
+        C1: Active Listening,
+        C3: Emotional Soothing,
+        C6: Cultural Adaptation,
+        C2: Face-Saving,
+        C5: Relationship Repair
+    },
+    ytick=data,
+    xmin=0.6, xmax=1.0,
+    xlabel={Fleiss' Kappa ($\kappa$)},
+    ylabel={Strategy Category},
+    nodes near coords,
+    nodes near coords align={horizontal},
+    xmajorgrids=true,
+    grid style=dashed,
+    bar height=0.6cm,
+    enlarge y limits=0.15,
+]
+
+% C4: Solution Advancement
+\addplot coordinates {(0.91, C4: Solution Advancement)};
+
+% C1: Active Listening
+\addplot coordinates {(0.89, C1: Active Listening)};
+
+% C3: Emotional Soothing
+\addplot coordinates {(0.81, C3: Emotional Soothing)};
+
+% C6: Cultural Adaptation
+\addplot coordinates {(0.81, C6: Cultural Adaptation)};
+
+% C2: Face-Saving
+\addplot coordinates {(0.76, C2: Face-Saving)};
+
+% C5: Relationship Repair
+\addplot coordinates {(0.73, C5: Relationship Repair)};
+
+% Overall line
+\draw[red, dashed, thick] (axis cs:0.82, rel axis cs:0,0) -- (axis cs:0.82, rel axis cs:1,1);
+\node[anchor=south west, color=red] at (axis cs:0.82, rel axis cs:0.95) {Overall $\kappa=0.82$};
+
+% Threshold lines
+\draw[green!60!black, dashed] (axis cs:0.80, rel axis cs:0,0) -- (axis cs:0.80, rel axis cs:1,1);
+\node[anchor=south east, color=green!60!black, font=\tiny] at (axis cs:0.80, rel axis cs:0.95) {Substantial (0.80)};
+
+\draw[blue, dashed] (axis cs:0.90, rel axis cs:0,0) -- (axis cs:0.90, rel axis cs:1,1);
+\node[anchor=south east, color=blue, font=\tiny] at (axis cs:0.90, rel axis cs:0.95) {Almost Perfect (0.90)};
+
+\end{axis}
+
+\end{tikzpicture}
+\caption{Per-strategy inter-annotator agreement (Fleiss' Kappa). Objective strategies like Solution Advancement achieve highest agreement ($\kappa=0.91$), while subjective strategies like Relationship Repair have lower but still substantial agreement ($\kappa=0.73$). All categories exceed the $\geq0.70$ threshold.}
+\label{fig:per_strategy_iaa}
+\end{figure}
