@@ -1,0 +1,71 @@
+% Four-Dimensional Cultural Characterization Framework
+% Generated for CCSE-CS paper
+\begin{figure}[t]
+\centering
+\resizebox{0.9\textwidth}{!}{
+\begin{tikzpicture}[
+    dimension/.style={rectangle, draw=blue!60, fill=blue!5, very thick, rounded corners, minimum width=3cm, minimum height=1.5cm, align=center},
+    level/.style={circle, draw=black!40, fill=green!10, thick, minimum size=1.2cm, align=center, font=\small},
+    arrow/.style={->, >=stealth, thick, color=blue!60},
+    example/.style={font=\footnotesize\itshape, color=gray!80}
+]
+
+% Title
+\node[font=\Large\bfseries] at (0, 6) {Four-Dimensional Cultural Characterization Framework};
+
+% Dimension 1: Relationship Orientation
+\node[dimension] (D1) at (-6, 3.5) {\textbf{D1:}\\Relationship Orientation\\关系取向};
+\node[level] (D1a) at (-8, 1.5) {正式\\Formal};
+\node[level] (D1b) at (-4, 1.5) {友好\\Friendly};
+\draw[arrow] (D1) -- (D1a);
+\draw[arrow] (D1) -- (D1b);
+\node[example, anchor=north] at (-8, 0.5) {"您好，请问有什么可以帮助您？"};
+\node[example, anchor=north] at (-4, 0.5) {"哈喽，有什么需要帮忙的吗？"};
+
+% Dimension 2: Face Sensitivity
+\node[dimension] (D2) at (-2, 3.5) {\textbf{D2:}\\Face Sensitivity\\面子敏感度};
+\node[level] (D2a) at (-3, 1.5) {高\\High};
+\node[level] (D2b) at (-1, 1.5) {中\\Med};
+\node[level] (D2c) at (-2, -0.5) {低\\Low};
+\draw[arrow] (D2) -- (D2a);
+\draw[arrow] (D2) -- (D2b);
+\draw[arrow] (D2) -- (D2c);
+\node[example, anchor=north, font=\tiny] at (-3, 0.5) {"系统可能没有及时提醒到您"};
+\node[example, anchor=north, font=\tiny] at (-1, 0.5) {"抱歉让您久等了"};
+
+% Dimension 3: Euphemism Level
+\node[dimension] (D3) at (2, 3.5) {\textbf{D3:}\\Euphemism Level\\委婉度};
+\node[level] (D3a) at (1, 1.5) {高\\High};
+\node[level] (D3b) at (3, 1.5) {低\\Low};
+\draw[arrow] (D3) -- (D3a);
+\draw[arrow] (D3) -- (D3b);
+\node[example, anchor=north, font=\tiny] at (1, 0.5) {"这个商品可能不太适合您"};
+\node[example, anchor=north, font=\tiny] at (3, 0.5) {"这个商品不适合您"};
+
+% Dimension 4: Conflict Intensity
+\node[dimension] (D4) at (6, 3.5) {\textbf{D4:}\\Conflict Intensity\\冲突强度};
+\node[level] (D4a) at (5, 1.5) {低\\Low};
+\node[level] (D4b) at (7, 1.5) {中\\Med};
+\node[level] (D4c) at (6, -0.5) {高\\High};
+\draw[arrow] (D4) -- (D4a);
+\draw[arrow] (D4) -- (D4b);
+\draw[arrow] (D4) -- (D4c);
+\node[example, anchor=north, font=\tiny] at (5, 0.5) {"咨询建议"};
+\node[example, anchor=north, font=\tiny] at (7, 0.5) {"投诉不满"};
+\node[example, anchor=north, font=\tiny] at (6, -1.5) {"严重违规"};
+
+% Key Insight Box
+\node[draw=red!60, fill=red!5, very thick, rounded corners, align=left, font=\small] at (0, -3) {
+    \textbf{Key Insight:}\\
+    These dimensions are \textbf{not mutually exclusive}.\\
+    For example, high face-sensitivity customers\\
+    often prefer higher euphemism levels.\\
+    We embrace these correlations as they reflect\\
+    real-world cultural patterns.
+};
+
+\end{tikzpicture}
+}
+\caption{Four-dimensional cultural characterization framework capturing relationship orientation, face sensitivity, euphemism level, and conflict intensity. Unlike general cultural taxonomies, our framework focuses on interaction-level cultural factors specific to Chinese customer service.}
+\label{fig:cultural_framework}
+\end{figure}
