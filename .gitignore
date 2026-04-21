@@ -1,0 +1,54 @@
+# Data files (too large / sensitive)
+data/raw/*.json
+data/raw/*.jsonl
+data/raw/*.txt
+data/processed/
+data/**/*.json
+!data/.gitkeep
+
+# Model weights & checkpoints
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+
+# Training outputs
+unsloth_compiled_cache/
+logs/
+wandb/
+runs/
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# LaTeX aux
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.out
+
+# Misc
+*.zip
+*.tar.gz
+*.crdownload
+CLEANUP_STATUS_REPORT.md
+cleanup_all_processes.sh
