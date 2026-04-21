@@ -1,0 +1,93 @@
+% ============================================================================
+% CCSE-CS for EMNLP 2026 - Main Submission Version
+% Limited to 8 pages (excluding references)
+% Appendix and extended examples moved to supplementary material
+% ============================================================================
+
+\documentclass{article}
+
+% EMNLP 2026 packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+% Chinese support
+\usepackage[UTF8]{ctex}
+
+% Page setup (EMNLP format)
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+
+% Remove all anonymity-identifying information
+\title{CCSE-CS: A Culturally-Aware Empathetic Dialogue Dataset for Chinese Customer Service}
+
+\author{
+  Anonymous Authors \\
+  Anonymous Institution
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Customer service dialogue systems require deep cultural understanding and empathetic communication skills, especially in high-context cultures like China where face-saving (面子) and indirect communication patterns play crucial roles. While existing empathetic dialogue datasets (ESConv, CSC) have advanced English-centric customer service AI, they lack (1) Chinese cultural grounding, (2) fine-grained strategy taxonomies, and (3) rigorous multi-dimensional evaluation protocols.
+
+We present \textbf{CCSE-CS} (\textit{Customer Service Culturally-Aware Strategies for Empathy}), a high-quality Chinese customer service dialogue dataset with 522 dialogues and 3,285 turns across four domains (e-commerce, banking, telecommunications, healthcare). Our key contributions include:
+
+\begin{itemize}
+  \item A \textbf{four-dimensional cultural characterization framework} (relationship orientation, face sensitivity, euphemism level, conflict intensity) enabling systematic study of cultural factors in empathetic dialogue, validated through ablation studies (+0.70 performance gain).
+
+  \item A \textbf{6-category $\times$ 18-substrategy taxonomy} derived from cross-cultural psychology and customer service standards, with explicit evidence chains linking each strategy to existing literature or cultural adaptations. Ablation studies validate fine-grained strategies over coarse-grained taxonomies (+0.37 performance gain).
+
+  \item A \textbf{four-dimensional evaluation protocol} (Empathy-Appropriateness, Policy-Compliance, Cultural-Fit, Naturalness) extending recent LLM-as-a-judge work with customer-service-specific dimensions, achieving Pearson \(r=0.969\) with human experts.
+
+  \item A \textbf{cost-effective annotation pipeline} combining GPT-4 and human experts, achieving 83.3\% cost reduction (\$400 to \$75) while maintaining quality (Fleiss' Kappa=0.82).
+\end{itemize}
+
+Experiments show that models trained on CCSE-CS achieve 6.9\%+ improvement in overall ratings when scaling from 100 to 522 dialogues, with monotonic performance gains across all dimensions. Ablation studies validate the necessity of fine-grained strategies over coarse-grained taxonomies (e.g., splitting Emotional Management into 5 sub-strategies).
+
+\textbf{中文摘要：} 客服对话系统需要深刻的文化理解和共情沟通能力，尤其在中国等高语境文化中，"面子"维护和委婉表达至关重要。现有共情对话数据集（ESConv、CSC）虽推动了英文客服AI发展，但缺乏(1)中国文化扎根、(2)细粒度策略分类、(3)文化感知评测协议。本文提出 \textbf{CCSE-CS}（中文客服文化感知共情对话数据集），包含522段对话和3,285轮对话，覆盖电商/银行/电信/医疗四领域。核心贡献：(1) \textbf{四维文化表征框架}（关系取向/面子敏感度/委婉度/冲突强度），消融验证文化因素贡献+0.70；(2) \textbf{6类18子策略本体}（继承4个/升级6个/创新8个），消融验证细粒度优于粗粒度（+0.37）；(3) \textbf{四维评测协议}（共情适时性/政策合规/文化适切/自然度），r=0.969；(4) \textbf{成本有效标注管线}，节省83.3\%成本（Kappa=0.82）。数据量从100条扩展到522条时，整体评分提升6.9\%+，所有维度性能单调递增。
+\end{abstract}
+
+% [Content from main.tex will be included here, focusing on:
+% - Introduction (1 page)
+% - Related Work (1 page, compressed)
+% - Method (2 pages)
+% - Experiments (3 pages, focus on key results)
+% - Discussion & Limitations (1 page)
+%
+% Note: Full appendix, strategy details, and extended examples
+% are moved to supplementary_material.pdf]
+
+% [COPY RELEVANT SECTIONS FROM main.tex HERE]
+
+% ============================================================================
+% References
+% ============================================================================
+
+\bibliographystyle{acmtrans}
+\bibliography{references}
+
+\end{document}
+
+% ============================================================================
+% Submission Notes:
+% - This version fits within 8-page EMNLP limit
+% - Supplementary material (appendix.pdf) contains:
+%   * Full strategy derivation evidence chains
+%   * Quality filter examples
+%   * Cultural persona profiles
+%   * Extended error analysis
+%   * Per-strategy IAA details
+% ============================================================================
